@@ -1,0 +1,9 @@
+.flutter-plugins*
+.dart_tool
+macos/Flutter/*.swift
+*.stamp
+build/*
+*.jar
+*.flat
+*.json
+doc

@@ -1,0 +1,19 @@
+.defaultClass {
+    width: 70px;
+    border-radius: 50%;
+    object-fit: fill;
+    border : thick solid;
+    border-color : white;
+    border-width: 2px;
+    margin: 0 auto;
+}
+
+.change-border {
+    width: 70px;
+    border-radius: 50%;
+    object-fit: fill;
+    border : thick solid;
+    border-color : #ff0000;
+    border-width: 2px;
+    margin: 0 auto;
+}

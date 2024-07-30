@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&display=swap');
+
+* {
+    font-family: 'Kumbh Sans', sans-serif;
+}
+.avatar {
+    width: 30%;
+    border-radius: 100%;
+    top: 70px;
+    position: absolute;
+    border: 6px solid white;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+.profileCard {
+    position: relative;
+    height: 350px;
+    width: 350px;
+    border: none;
+    border-radius: 12px;
+    background-color: white;
+    z-index: 2;
+    margin: 0 auto;
+    top: 180px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #b6b7b8;
+}
+
+.location {
+    font-size: 18px;
+    line-height: 1.8rem;
+    color: gray;
+    text-align: center;
+}
+.age {
+    color: gray;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.banner {
+    width: 100%;
+    margin: 0 auto;
+    border-top: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: #b6b7b8;
+}
+
+.basic-info {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 3rem;
+    margin-bottom: 0.2rem;
+}
+
+
+.divider {
+    width: 100%;
+    height: .13rem;
+    background-color: #E8E9EC;
+    margin-bottom: 1.5rem;
+    margin-top: 0.9rem;
+    border-width: 1px;
+}
+
+.social-info {
+    display: flex;
+    align-items: center;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.likes {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.followers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.photos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-info > div > h3 {
+    font-size: 18px;
+    line-height: 1.2rem;
+}
+
+.social-info > div > p {
+    font-size: 0.8rem;
+    line-height: 1rem;
+    letter-spacing: 1.5px;
+    color: gray;
+  }
+
+.basic-info > h3 {
+    font-size: 18px;
+    line-height: 1.7rem;
+    margin-top: 0.4rem;
+    font-weight: bold;
+  }

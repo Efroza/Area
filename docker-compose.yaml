@@ -1,0 +1,132 @@
+version: "3.3"
+
+services:
+  server:
+    build: ./Backend
+    container_name: api_area
+    depends_on:
+      - db_area
+    ports:
+      - "8080:8000"
+    command: sh -c "python3 manage.py makemigrations && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
+    environment:
+      DB_ENGINE: 'django.db.backends.mysql'
+      DB_NAME: 'area'
+      DB_HOST: 'db_area'
+      DB_PORT: 3306
+      DB_USER: 'root'
+      DB_PASSWORD: 'password'
+      API_URL: 'http://127.0.0.1:8080/'
+
+  db_area:
+    image: mariadb:10.8.2
+    container_name: db_area
+    stdin_open: true
+    environment:
+      MARIADB_DATABASE: 'area'
+      MYQSL_ROOT_PASSWORD: 'password'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: 'password'
+      MARIADB_ROOT_PASSWORD: 'password'
+      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 'true'
+      MARIADB_RANDOM_ROOT_PASSWORD: ''
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+  client_web:
+    build: ./web-front
+    container_name: front_end_react
+    stdin_open: true
+    environment:
+      - REACT_APP_API_HOST=http://127.0.0.1:8080/
+    depends_on:
+      - server
+      - client_mobile
+    volumes:
+      # - ./web-front/node_modules
+      - apk:/build_mobileapp/
+    restart: always
+    ports:
+      - 8081:3000
+  
+  client_mobile:
+    build: ./Flutter
+    container_name: mobile_area
+    stdin_open: true
+    depends_on: 
+      - server
+    volumes:
+      - apk:/build_mobileapp
+    restart: always
+
+volumes:
+  mariadb_data: null
+  apk: null
+
+# networks:
+#   monreseau:
+  # api:
+  #   build: ./api
+  #   container_name: back_end
+  #   env_file:
+  #     - .env
+  #     - db.env
+  #     - back.env
+  #   depends_on:
+  #     - db
+  #   restart: always
+  #   volumes:
+  #     - ./api:/api
+  #   ports:
+  #     - ${BACK_PORT}:${BACK_PORT}
+
+  
+  # db:
+  #   image: postgres:14.0-alpine
+  #   container_name: db_dashbord
+  #   ports:
+  #     - 5432:5432
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   # env_file:
+  #   #   - db.env
+  #   environment:
+  #     - "POSTGRES_USER=postgres"
+  #     - "POSTGRES_PASSWORD=password"
+  #     - "POSTGRES_DB=dashboard_db"
+
+  # client_mobile:
+  #   build: ./Flutter
+  #   container_name: front_mobile
+
+  # database:
+  #   image: mysql:8.0.30
+  #   ports:
+  #       - "33061:3306"
+  #   command: --init-file /data/application/init.sql
+  #   volumes:
+  #       - ./init.sql:/data/application/init.sql
+  #   environment:
+  #       MYSQL_ROOT_USER: root
+  #       MYSQL_ROOT_PASSWORD: secret
+  #       MYSQL_DATABASE: homestead
+  #       MYSQL_USER: root
+  #       MYSQL_PASSWORD: secre
+
+  # front:
+  #   build: ./web-front
+  #   container_name: front_end
+  #   stdin_open: true
+  #   # env_file:
+  #   #   - .env
+  #   # depends_on:
+  #   #   - db
+  #   #   - api
+  #   volumes:
+  #     - ./web-front:/web-front
+  #   restart: always
+  #   ports:
+  #     - 3000:3000
+
+# volumes:
+#   postgres_data: null

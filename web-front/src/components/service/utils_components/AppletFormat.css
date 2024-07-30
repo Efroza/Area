@@ -1,0 +1,150 @@
+/* body {
+  padding: 2%;
+  background-color: violet;
+} */
+
+
+h1 {
+  text-align: center;
+  color:rgba(0, 0, 0, 0.904);
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+/* .test {
+  width: 50px;
+  height: 50px;
+} */
+
+.image_applet {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.Applet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width:300px;
+  height: 300px;
+  background-color: rgb(79, 76, 76);
+  border-radius: 3%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.729);
+  margin: 20px;
+}
+
+.ActvButtn
+{
+  /* position: absolute;
+  left: 43%; */
+  /* margin: auto; */
+  width: 150px;
+  height: 50px;
+  background-color: rgb(79, 76, 76);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.729);
+}
+.Applet:hover {
+  box-shadow: 0 6px 20px rgba(75, 14, 9, 0.948);
+}
+
+.DoneButton {
+  width: 150px;
+  height: 50px;
+  background-color: rgb(79, 76, 76);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.729);
+}
+
+.AppletFormat {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Create {
+  display: flex;
+  flex-direction: column;
+}
+
+.reactions_container_child {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.AppletTest {
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+  width:300px;
+  color: white;
+  background-color: rgb(79, 76, 76);
+  border-radius: 1%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.729);
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.AppletTest .title {
+  margin-bottom: 1em;
+}
+
+.AppletTest .applet-description {
+  display: flex;
+  text-align: left;
+}
+
+.AppletTest .left {
+  margin-right: 1em;
+}
+
+.description-applet {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+.AppletTest .ActvButtn {
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+.grid_applet {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.actions_container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.reactions_container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.line {
+  display: flex;
+  flex-direction: column;
+}
+
+.ContainerButton {
+  height: 60px;
+  text-align: center;
+}
+
+/* button {
+  position: relative;
+  width: 50%;
+} */
